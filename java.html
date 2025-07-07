@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Topics Reference</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    details {
+      background: #fff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      color: #00703c;
+    }
+    p {
+      margin: 8px 0;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Java Topics Reference</h1>
+
+  <details>
+    <summary>1. Java Introduction</summary>
+    <p>Java is a platform-independent, object-oriented programming language developed by Sun Microsystems. It follows the principle of "Write Once, Run Anywhere".</p>
+    <p><strong>Features:</strong> Simple, Secure, Platform Independent, Robust, Multithreaded, High Performance</p>
+    <pre>
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}</pre>
+  </details>
+
+  <details>
+    <summary>2. Variables and Data Types</summary>
+    <p>Java variables must be declared with a type. Types include:</p>
+    <ul>
+      <li>Primitive types: int, float, boolean, char, etc.</li>
+      <li>Non-primitive types: String, Arrays, Classes</li>
+    </ul>
+    <pre>
+int age = 25;
+double price = 10.99;
+boolean isJavaFun = true;
+char grade = 'A';
+String name = "John";
+System.out.println(name + " is " + age + " years old.");</pre>
+  </details>
+
+  <details>
+    <summary>3. Operators</summary>
+    <p>Java supports different types of operators:</p>
+    <ul>
+      <li>Arithmetic: +, -, *, /, %</li>
+      <li>Relational: ==, !=, >, <, >=, <=</li>
+      <li>Logical: &&, ||, !</li>
+      <li>Assignment: =, +=, -=, etc.</li>
+    </ul>
+    <pre>
+int x = 10, y = 5;
+System.out.println(x + y);
+System.out.println(x > y);
+System.out.println((x > y) && (y > 0));</pre>
+  </details>
+
+  <details>
+    <summary>4. Control Statements</summary>
+    <p>Used to control the flow of execution:</p>
+    <ul>
+      <li>Conditional: if, if-else, switch</li>
+      <li>Loops: for, while, do-while</li>
+      <li>Branching: break, continue, return</li>
+    </ul>
+    <pre>
+int number = 10;
+if (number > 0) {
+  System.out.println("Positive number");
+} else {
+  System.out.println("Negative number");
+}
+
+for (int i = 0; i < 5; i++) {
+  if (i == 3) continue;
+  System.out.println(i);
+}</pre>
+  </details>
+
+  <details>
+    <summary>5. Methods</summary>
+    <p>Methods are blocks of code that perform specific tasks. Java supports:</p>
+    <ul>
+      <li>Static methods</li>
+      <li>Instance methods</li>
+      <li>Method overloading</li>
+    </ul>
+    <pre>
+public class Calculator {
+  static int add(int a, int b) {
+    return a + b;
+  }
+
+  int multiply(int a, int b) {
+    return a * b;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(add(3, 4));
+    Calculator c = new Calculator();
+    System.out.println(c.multiply(2, 5));
+  }
+}</pre>
+  </details>
+
+  <details>
+    <summary>6. Classes and Objects</summary>
+    <p>Classes are blueprints for objects. Objects are instances of classes.</p>
+    <pre>
+class Student {
+  String name;
+  int age;
+
+  void display() {
+    System.out.println("Name: " + name);
+    System.out.println("Age: " + age);
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Student s1 = new Student();
+    s1.name = "John";
+    s1.age = 20;
+    s1.display();
+  }
+}</pre>
+  </details>
+
+  <details>
+    <summary>7. Inheritance</summary>
+    <p>Inheritance allows reuse of code and promotes hierarchical classification.</p>
+    <pre>
+class Animal {
+  void sound() {
+    System.out.println("Animal sound");
+  }
+}
+
+class Dog extends Animal {
+  void bark() {
+    System.out.println("Dog barks");
+  }
+}
+
+public class Test {
+  public static void main(String[] args) {
+    Dog d = new Dog();
+    d.sound();
+    d.bark();
+  }
+}</pre>
+  </details>
+
+  <details>
+    <summary>8. Arrays</summary>
+    <p>Arrays are used to store multiple values in a single variable.</p>
+    <pre>
+int[] numbers = {10, 20, 30, 40};
+System.out.println("First element: " + numbers[0]);
+
+for (int n : numbers) {
+  System.out.println(n);
+}</pre>
+  </details>
+
+  <details>
+    <summary>9. Strings</summary>
+    <p>Strings are immutable objects that represent sequences of characters.</p>
+    <pre>
+String s = "Hello";
+System.out.println(s.length());
+System.out.println(s.toUpperCase());
+System.out.println(s.concat(" World"));</pre>
+  </details>
+
+  <details>
+    <summary>10. Exception Handling</summary>
+    <p>Java provides robust error handling using try, catch, finally, and throw/throws.</p>
+    <pre>
+public class Example {
+  public static void main(String[] args) {
+    try {
+      int result = 10 / 0;
+    } catch (ArithmeticException e) {
+      System.out.println("Error: " + e.getMessage());
+    } finally {
+      System.out.println("This block always executes.");
+    }
+  }
+}</pre>
+  </details>
+
+</body>
+</html>

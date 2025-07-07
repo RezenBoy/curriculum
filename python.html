@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Python Topics Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        details {
+            background: #fff;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            color: #00703c;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Python Topics Reference</h1>
+
+    <details>
+        <summary>1. Python Basics</summary>
+        <p><strong>Introduction:</strong> Python is a popular, beginner-friendly programming language known for its
+            readability.</p>
+        <pre>print("Hello, World!")</pre>
+        <p><strong>Syntax:</strong> Python uses indentation to define blocks of code instead of curly braces.</p>
+        <pre>
+if True:
+    print("Indented block")</pre>
+        <p><strong>Variables:</strong> Variables are created when you assign a value to a name.</p>
+        <pre>
+name = "Alice"
+age = 25
+print(name, age)</pre>
+    </details>
+
+    <details>
+        <summary>2. Numbers and Operators</summary>
+        <p><strong>Numbers:</strong> Python has int, float, and complex number types.</p>
+        <pre>
+x = 5       # int
+y = 3.14    # float
+z = 2 + 3j  # complex
+print(type(x), type(y), type(z))</pre>
+        <p><strong>Operators:</strong> Used to perform operations like addition or comparison.</p>
+        <pre>
+a = 10
+b = 5
+print(a + b, a > b, a == 10 and b == 5)</pre>
+    </details>
+
+    <details>
+        <summary>3. Control Flow</summary>
+        <p><strong>Conditionals:</strong> Execute blocks of code depending on conditions using <code>if</code>,
+            <code>elif</code>, and <code>else</code>.
+        </p>
+        <pre>
+age = 18
+if age >= 18:
+    print("Adult")
+elif age >= 13:
+    print("Teenager")
+else:
+    print("Child")</pre>
+        <p><strong>Nested conditionals:</strong> You can place conditionals inside conditionals.</p>
+        <pre>
+x = 10
+y = 5
+if x > 5:
+    if y > 2:
+        print("x > 5 and y > 2")</pre>
+        <p><strong>Ternary operator:</strong> One-line conditional expression.</p>
+        <pre>
+status = "Pass" if score >= 50 else "Fail"</pre>
+        <p><strong>match-case (Python 3.10+):</strong> Similar to switch-case in other languages.</p>
+        <pre>
+def check_day(day):
+    match day:
+        case "Mon":
+            print("Start of week")
+        case "Fri":
+            print("Weekend soon")
+        case _:
+            print("Midweek")</pre>
+        <p><strong>Loops:</strong> Repeating code using <code>for</code> or <code>while</code>.</p>
+        <pre>
+# for loop
+for i in range(3):
+    print(i)
+
+# while loop
+count = 0
+while count < 3:
+    print(count)
+    count += 1</pre>
+        <p><strong>break and continue:</strong> <code>break</code> exits loop, <code>continue</code> skips to next
+            iteration.</p>
+        <pre>
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)</pre>
+        <p><strong>else with loops:</strong> Runs when loop completes normally (not broken).</p>
+        <pre>
+for i in range(3):
+    print(i)
+else:
+    print("Loop finished")</pre>
+        <p><strong>pass statement:</strong> Placeholder when no code is needed.</p>
+        <pre>
+for i in range(3):
+    pass  # To be implemented later</pre>
+    </details>
+
+    <details>
+        <summary>4. Data Collections</summary>
+        <p><strong>Lists:</strong> Ordered and changeable collections. Can contain duplicates.</p>
+        <pre>
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+fruits[1] = "orange"
+print(fruits)</pre>
+        <p><strong>Tuples:</strong> Ordered and unchangeable. Use when data should not be modified.</p>
+        <pre>
+colors = ("red", "green", "blue")
+print(colors[0])</pre>
+        <p><strong>Sets:</strong> Unordered collections with unique elements. No duplicates allowed.</p>
+        <pre>
+numbers = {1, 2, 3, 2}
+numbers.add(4)
+print(numbers)</pre>
+        <p><strong>Dictionaries:</strong> Key-value pairs for storing data. Keys must be unique.</p>
+        <pre>
+student = {"name": "Alice", "age": 20}
+student["age"] = 21
+print(student["name"], student["age"])</pre>
+    </details>
+
+    <details>
+        <summary>5. Functions</summary>
+        <p><strong>Defining Functions:</strong> Functions are defined using the <code>def</code> keyword and are used to
+            group reusable code.</p>
+        <pre>
+def greet():
+    print("Hello")
+
+greet()</pre>
+        <p><strong>Function with Parameters:</strong> You can pass information into functions using parameters.</p>
+        <pre>
+def greet(name):
+    print("Hello,", name)
+
+greet("Alice")</pre>
+        <p><strong>Default Parameters:</strong> Parameters can have default values.</p>
+        <pre>
+def greet(name="Guest"):
+    print("Hello,", name)
+
+greet()
+# Output: Hello, Guest</pre>
+        <p><strong>Return Statement:</strong> Functions can return values using <code>return</code>.</p>
+        <pre>
+def add(a, b):
+    return a + b
+
+result = add(3, 4)
+print(result)</pre>
+        <p><strong>Arbitrary Arguments:</strong> Use <code>*args</code> for variable number of positional arguments.</p>
+        <pre>
+def total(*numbers):
+    return sum(numbers)
+
+print(total(1, 2, 3))</pre>
+        <p><strong>Keyword Arguments:</strong> Use <code>**kwargs</code> to accept keyword arguments.</p>
+        <pre>
+def display(**info):
+    for key, value in info.items():
+        print(key, ":", value)
+
+display(name="Alice", age=25)</pre>
+        <p><strong>Recursion:</strong> A function calling itself.</p>
+        <pre>
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))</pre>
+        <p><strong>Lambda Functions:</strong> Anonymous functions written in a single line.</p>
+        <pre>
+square = lambda x: x * x
+print(square(5))</pre>
+        <p><strong>Function Annotations:</strong> Used for type hints.</p>
+        <pre>
+def add(x: int, y: int) -> int:
+    return x + y
+
+print(add(3, 4))</pre>
+    </details>
+
+    <details>
+        <summary>6. File Handling</summary>
+        <p><strong>Reading/Writing Files:</strong> Files are opened with open() and should be closed after use. Using
+            <code>with</code> handles closing automatically.
+        </p>
+        <pre>
+# Writing to a file
+with open("example.txt", "w") as f:
+    f.write("Hello\nWorld")
+
+# Reading the file
+with open("example.txt", "r") as f:
+    for line in f:
+        print(line.strip())</pre>
+        <p><strong>Appending to a file:</strong> Use mode "a" to add to the end.</p>
+        <pre>
+with open("example.txt", "a") as f:
+    f.write("\nNew line")</pre>
+        <p><strong>Checking file existence (with os):</strong></p>
+        <pre>
+import os
+if os.path.exists("example.txt"):
+    os.remove("example.txt")</pre>
+    </details>
+
+    <details>
+        <summary>7. Object-Oriented Programming (OOP)</summary>
+        <p><strong>Classes and Objects:</strong> A class is a blueprint; an object is an instance of that blueprint.</p>
+        <pre>
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        return f"Hi, I'm {self.name}"
+
+p = Person("John")
+print(p.greet())</pre>
+        <p><strong>Inheritance:</strong> Allows new classes to inherit the properties of existing ones.</p>
+        <pre>
+class Student(Person):
+    def __init__(self, name, grade):
+        super().__init__(name)
+        self.grade = grade
+
+s = Student("Alice", "A")
+print(s.greet(), s.grade)</pre>
+        <p><strong>Encapsulation:</strong> Data hiding using private variables with <code>_</code> or <code>__</code>.
+        </p>
+        <pre>
+class BankAccount:
+    def __init__(self):
+        self.__balance = 0
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance</pre>
+        <p><strong>Polymorphism:</strong> Same method name behaves differently based on context.</p>
+        <pre>
+class Dog:
+    def speak(self):
+        return "Woof"
+
+class Cat:
+    def speak(self):
+        return "Meow"
+
+def animal_sound(animal):
+    print(animal.speak())
+
+animal_sound(Dog())
+animal_sound(Cat())</pre>
+    </details>
+
+    <details>
+        <summary>11. Modules and Packages</summary>
+        <p><strong>Modules:</strong> A Python module is a file with a .py extension containing Python code (functions,
+            variables, classes).</p>
+        <pre>
+# Create a module file named mymodule.py
+def greet(name):
+    return f"Hello, {name}!"
+
+# Use the module in another file
+import mymodule
+print(mymodule.greet("Alice"))</pre>
+        <p><strong>Importing Specific Elements:</strong> You can import specific functions or variables.</p>
+        <pre>
+from mymodule import greet
+print(greet("Bob"))</pre>
+        <p><strong>Using Aliases:</strong> Use <code>as</code> to rename imports.</p>
+        <pre>
+import math as m
+print(m.sqrt(25))</pre>
+        <p><strong>Packages:</strong> A package is a collection of modules in a directory with an
+            <code>__init__.py</code> file.</p>
+        <pre>
+# Directory structure:
+# mypackage/
+# ├── __init__.py
+# ├── module1.py
+# └── module2.py
+
+from mypackage import module1
+module1.some_function()</pre>
+        <p><strong>Built-in Modules:</strong> Python comes with standard libraries like <code>math</code>,
+            <code>os</code>, <code>sys</code>, <code>random</code>.</p>
+        <pre>
+import random
+print(random.randint(1, 10))</pre>
+        <p><strong>Installing External Packages:</strong> Use pip to install third-party packages.</p>
+        <pre>
+pip install requests</pre>
+        <p><strong>Using Installed Package:</strong></p>
+        <pre>
+import requests
+response = requests.get("https://example.com")
+print(response.status_code)</pre>
+    </details>
+
+    <details>
+        <summary>9. Date and Time</summary>
+        <p><strong>datetime Module:</strong> Used to work with dates and times.</p>
+        <pre>
+import datetime
+now = datetime.datetime.now()
+print("Current Date and Time:", now)
+print("Year:", now.year)
+print("Month:", now.month)
+print("Day:", now.day)</pre>
+        <p><strong>Create Specific Date:</strong></p>
+        <pre>
+d = datetime.datetime(2025, 7, 7)
+print(d.strftime("%A, %d %B %Y"))</pre>
+        <p><strong>Time Delta:</strong> For date/time arithmetic.</p>
+        <pre>
+from datetime import timedelta
+tomorrow = now + timedelta(days=1)
+print("Tomorrow:", tomorrow)</pre>
+    </details>
+
+    <details>
+        <summary>10. Math, JSON, Regex</summary>
+        <p><strong>Math Module:</strong> Provides mathematical functions.</p>
+        <pre>
+import math
+print("Square root:", math.sqrt(16))
+print("Power:", math.pow(2, 3))
+print("Pi:", math.pi)</pre>
+        <p><strong>JSON Module:</strong> For encoding/decoding JSON data.</p>
+        <pre>
+import json
+# Convert dictionary to JSON string
+data = {"name": "Alice", "age": 25}
+json_str = json.dumps(data)
+print(json_str)
+
+# Convert JSON string to dictionary
+parsed = json.loads(json_str)
+print(parsed["name"])</pre>
+        <p><strong>Regular Expressions (Regex):</strong> For pattern matching and searching in strings.</p>
+        <pre>
+import re
+text = "My email is test@example.com"
+match = re.search(r"[\w.-]+@[\w.-]+", text)
+if match:
+    print("Found email:", match.group())
+
+# Find all matches
+text = "cat, mat, bat"
+matches = re.findall(r".at", text)
+print(matches)</pre>
+    </details>
+
+    <details>
+        <summary>11. Error and Exception Handling</summary>
+        <p><strong>try-except:</strong> Used to catch and handle exceptions.</p>
+        <pre>
+try:
+    print(10 / 0)
+except ZeroDivisionError:
+    print("Can't divide by zero")</pre>
+        <p><strong>Multiple exceptions:</strong> Handle different exceptions separately.</p>
+        <pre>
+try:
+    num = int("abc")
+except ValueError:
+    print("Invalid value")
+except Exception as e:
+    print("Error:", e)</pre>
+        <p><strong>finally block:</strong> Executes no matter what.</p>
+        <pre>
+try:
+    print("Trying...")
+finally:
+    print("Always runs")</pre>
+        <p><strong>Raising exceptions:</strong> You can manually throw an exception using <code>raise</code>.</p>
+        <pre>
+def set_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative")
+    print("Age set to", age)</pre>
+    </details>
+
+    <details>
+        <summary>12. Advanced Topics</summary>
+        <p><strong>Decorators:</strong> Modify function behavior.</p>
+        <pre>
+def decorator(func):
+    def wrapper():
+        print("Before")
+        func()
+        print("After")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello")
+
+say_hello()</pre>
+    </details>
+
+</body>
+
+</html>

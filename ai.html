@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Course Reference</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    details {
+      background: #fff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+    }
+    summary {
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      color: #00703c;
+    }
+    p {
+      margin: 8px 0;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>AI Course Reference</h1>
+
+  <details>
+    <summary>1. Introduction to AI</summary>
+    <p><strong>Artificial Intelligence (AI)</strong> is the branch of computer science concerned with building smart machines capable of performing tasks that typically require human intelligence.</p>
+    <ul>
+      <li>Goal: Mimic human cognitive functions such as learning, reasoning, and perception</li>
+      <li>Types of AI:
+        <ul>
+          <li><strong>Narrow AI:</strong> Performs a specific task (e.g., voice assistants)</li>
+          <li><strong>General AI:</strong> Performs any intellectual task a human can do (still theoretical)</li>
+          <li><strong>Super AI:</strong> Surpasses human intelligence (hypothetical)</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>2. History and Applications</summary>
+    <p><strong>Timeline:</strong></p>
+    <ul>
+      <li>1950s – Alan Turing proposes machine intelligence</li>
+      <li>1956 – Term "Artificial Intelligence" coined at Dartmouth Conference</li>
+      <li>1980s – Expert systems rise</li>
+      <li>2010s – Deep learning and big data revolution</li>
+    </ul>
+    <p><strong>Applications:</strong></p>
+    <ul>
+      <li>Self-driving cars</li>
+      <li>Fraud detection</li>
+      <li>Medical diagnosis</li>
+      <li>Chatbots and virtual assistants</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>3. Machine Learning Basics</summary>
+    <p><strong>Definition:</strong> Machine Learning (ML) allows systems to learn and improve from experience without being explicitly programmed.</p>
+    <ul>
+      <li><strong>Supervised Learning:</strong> Learn from labeled data (e.g., classification, regression)</li>
+      <li><strong>Unsupervised Learning:</strong> Learn from unlabeled data (e.g., clustering, dimensionality reduction)</li>
+      <li><strong>Reinforcement Learning:</strong> Agent learns via rewards and punishments</li>
+    </ul>
+    <pre>
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)</pre>
+  </details>
+
+  <details>
+    <summary>4. Neural Networks & Deep Learning</summary>
+    <p><strong>Neural Networks</strong> are inspired by the human brain and are the foundation of deep learning.</p>
+    <ul>
+      <li><strong>Neuron:</strong> Basic unit with inputs, weights, bias, and activation</li>
+      <li><strong>Layers:</strong> Input, Hidden, Output</li>
+      <li><strong>Common Architectures:</strong> CNN, RNN, GAN</li>
+    </ul>
+    <p><strong>Activation Functions:</strong> Sigmoid, ReLU, Tanh</p>
+    <pre>
+import tensorflow as tf
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(1)
+])
+model.compile(optimizer='adam', loss='mean_squared_error')
+model.fit(X_train, y_train, epochs=10)</pre>
+  </details>
+
+  <details>
+    <summary>5. Natural Language Processing (NLP)</summary>
+    <p><strong>NLP</strong> allows computers to process and understand human language.</p>
+    <ul>
+      <li>Text preprocessing: Tokenization, stopwords removal, stemming, lemmatization</li>
+      <li>Applications: Machine translation, sentiment analysis, question answering</li>
+    </ul>
+    <pre>
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import word_tokenize
+sentence = "AI is transforming the world."
+print(word_tokenize(sentence))</pre>
+  </details>
+
+  <details>
+    <summary>6. Computer Vision</summary>
+    <p><strong>Computer Vision</strong> enables machines to derive meaningful information from visual inputs.</p>
+    <ul>
+      <li>Image classification</li>
+      <li>Object detection</li>
+      <li>Facial recognition</li>
+      <li>Medical imaging analysis</li>
+    </ul>
+    <pre>
+import cv2
+img = cv2.imread("example.jpg")
+cv2.imshow("Image", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()</pre>
+  </details>
+
+  <details>
+    <summary>7. Tools and Libraries</summary>
+    <p><strong>Python Libraries:</strong></p>
+    <ul>
+      <li><strong>NumPy:</strong> Numerical computations</li>
+      <li><strong>Pandas:</strong> Data manipulation</li>
+      <li><strong>Matplotlib / Seaborn:</strong> Visualization</li>
+      <li><strong>Scikit-learn:</strong> ML algorithms</li>
+      <li><strong>TensorFlow / PyTorch:</strong> Deep learning</li>
+      <li><strong>OpenCV:</strong> Image processing</li>
+      <li><strong>NLTK / SpaCy:</strong> NLP processing</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>8. Ethics and Future of AI</summary>
+    <p>As AI evolves, ethical concerns grow more important.</p>
+    <ul>
+      <li>Data privacy and security</li>
+      <li>Bias and discrimination in algorithms</li>
+      <li>Job automation and economic impact</li>
+      <li>AI governance and regulations</li>
+      <li>Responsible and explainable AI</li>
+    </ul>
+  </details>
+
+</body>
+</html>
