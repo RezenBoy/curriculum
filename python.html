@@ -2,460 +2,386 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Python Topics Reference</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <title>Python Crash Course</title>
+  <style>
+    :root {
+      --primary: #333333;
+      --secondary: #555555;
+      --accent: #0078d7;
+      --bg: #f4f4f4;
+      --white: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.07);
+      --text-dark: #2c2c2c;
+      --text-muted: #666666;
+    }
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
 
-        details {
-            background: #fff;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            padding: 10px 15px;
-        }
+    body {
+      background: var(--bg);
+      color: var(--text-dark);
+      padding: 20px;
+    }
 
-        summary {
-            font-weight: bold;
-            font-size: 18px;
-            cursor: pointer;
-            color: #00703c;
-        }
+    h1 {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 35px;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
 
-        p {
-            margin: 8px 0;
-        }
+    .roadmap {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        pre {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-    </style>
+    details {
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px var(--shadow);
+      padding: 18px 22px;
+      transition: all 0.3s ease;
+      border: 1px solid #e5e5e5;
+    }
+
+    details[open] {
+      background: #fafafa;
+      border-left: 4px solid var(--accent);
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+
+    summary:hover {
+      color: var(--accent);
+    }
+
+    .time {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 15px;
+      white-space: nowrap;
+    }
+
+    .topics {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .topic {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 14px;
+      border: 1px solid #e9e9e9;
+      box-shadow: 0 1px 6px var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .topic:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+
+    .topic-title {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .subtopics-list {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .subtopics-list ul {
+      list-style-type: disc;
+      margin-left: 18px;
+      margin-top: 5px;
+    }
+
+    .subtopics-list li {
+      margin-bottom: 3px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      summary {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Python Topics Reference</h1>
 
+  <h1> Python Crash Course</h1>
+
+  <div class="roadmap">
+
+    <!-- BASIC -->
     <details>
-        <summary>1. Python Basics</summary>
-        <p><strong>Introduction:</strong> Python is a popular, beginner-friendly programming language known for its
-            readability.</p>
-        <pre>print("Hello, World!")</pre>
-        <p><strong>Syntax:</strong> Python uses indentation to define blocks of code instead of curly braces.</p>
-        <pre>
-if True:
-    print("Indented block")</pre>
-        <p><strong>Variables:</strong> Variables are created when you assign a value to a name.</p>
-        <pre>
-name = "Alice"
-age = 25
-print(name, age)</pre>
+      <summary>Basic Concepts <span class="time">⏱ 1 hour</span></summary>
+      <div class="topics">
+        <div class="topic">
+          <div class="topic-title">Syntax & Indentation</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Basic structure</li>
+              <li>Indentation rules</li>
+              <li>Print statements</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Variables & Data Types</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Integers, floats, strings, booleans</li>
+              <li>Type conversion</li>
+              <li>Naming rules</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Strings</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Concatenation & slicing</li>
+              <li>Formatting</li>
+              <li>Common string methods</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Operators</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Arithmetic & comparison</li>
+              <li>Logical & assignment</li>
+              <li>Membership operators</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </details>
 
+    <!-- BEGINNER -->
     <details>
-        <summary>2. Numbers and Operators</summary>
-        <p><strong>Numbers:</strong> Python has int, float, and complex number types.</p>
-        <pre>
-x = 5       # int
-y = 3.14    # float
-z = 2 + 3j  # complex
-print(type(x), type(y), type(z))</pre>
-        <p><strong>Operators:</strong> Used to perform operations like addition or comparison.</p>
-        <pre>
-a = 10
-b = 5
-print(a + b, a > b, a == 10 and b == 5)</pre>
+      <summary>Beginner Level <span class="time">⏱ 3-4 hours</span></summary>
+      <div class="topics">
+        <div class="topic">
+          <div class="topic-title">Conditional Statements</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>if, elif, else statements</li>
+              <li>Nested conditions</li>
+              <li>Ternary expressions</li>
+              <li>match-case statement</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Loops</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>For loop</li>
+              <li>While loop</li>
+              <li>Nested loops</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Loop Control Statements</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>break statement</li>
+              <li>continue statement</li>
+              <li>else with loops</li>
+              <li>pass statement</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Data Collections</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Lists</li>
+              <li>Tuples</li>
+              <li>Sets</li>
+              <li>Dictionaries</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </details>
 
+    <!-- INTERMEDIATE -->
     <details>
-        <summary>3. Control Flow</summary>
-        <p><strong>Conditionals:</strong> Execute blocks of code depending on conditions using <code>if</code>,
-            <code>elif</code>, and <code>else</code>.
-        </p>
-        <pre>
-age = 18
-if age >= 18:
-    print("Adult")
-elif age >= 13:
-    print("Teenager")
-else:
-    print("Child")</pre>
-        <p><strong>Nested conditionals:</strong> You can place conditionals inside conditionals.</p>
-        <pre>
-x = 10
-y = 5
-if x > 5:
-    if y > 2:
-        print("x > 5 and y > 2")</pre>
-        <p><strong>Ternary operator:</strong> One-line conditional expression.</p>
-        <pre>
-status = "Pass" if score >= 50 else "Fail"</pre>
-        <p><strong>match-case (Python 3.10+):</strong> Similar to switch-case in other languages.</p>
-        <pre>
-def check_day(day):
-    match day:
-        case "Mon":
-            print("Start of week")
-        case "Fri":
-            print("Weekend soon")
-        case _:
-            print("Midweek")</pre>
-        <p><strong>Loops:</strong> Repeating code using <code>for</code> or <code>while</code>.</p>
-        <pre>
-# for loop
-for i in range(3):
-    print(i)
-
-# while loop
-count = 0
-while count < 3:
-    print(count)
-    count += 1</pre>
-        <p><strong>break and continue:</strong> <code>break</code> exits loop, <code>continue</code> skips to next
-            iteration.</p>
-        <pre>
-for i in range(5):
-    if i == 3:
-        break
-    print(i)
-
-for i in range(5):
-    if i == 2:
-        continue
-    print(i)</pre>
-        <p><strong>else with loops:</strong> Runs when loop completes normally (not broken).</p>
-        <pre>
-for i in range(3):
-    print(i)
-else:
-    print("Loop finished")</pre>
-        <p><strong>pass statement:</strong> Placeholder when no code is needed.</p>
-        <pre>
-for i in range(3):
-    pass  # To be implemented later</pre>
+      <summary>Intermediate Level <span class="time">⏱ 4-5 hours</span></summary>
+      <div class="topics">
+        <div class="topic">
+          <div class="topic-title">Functions</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Defining functions</li>
+              <li>Parameters & return values</li>
+              <li>Scope & best practices</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Arguments & Advanced Function Concepts</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Default parameters</li>
+              <li>*args and **kwargs</li>
+              <li>Lambda functions</li>
+              <li>Recursion</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">File Handling</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Opening and closing files</li>
+              <li>Reading and writing</li>
+              <li>Appending and deleting</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Exception Handling</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>try and except blocks</li>
+              <li>finally block</li>
+              <li>Multiple exceptions</li>
+              <li>Raising exceptions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Modules & Packages</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Importing modules</li>
+              <li>Built-in libraries</li>
+              <li>Creating & using packages</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Object-Oriented Programming</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Classes and objects</li>
+              <li>Constructors</li>
+              <li>Inheritance</li>
+              <li>Encapsulation & polymorphism</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </details>
 
+    <!-- ADVANCED -->
     <details>
-        <summary>4. Data Collections</summary>
-        <p><strong>Lists:</strong> Ordered and changeable collections. Can contain duplicates.</p>
-        <pre>
-fruits = ["apple", "banana"]
-fruits.append("cherry")
-fruits[1] = "orange"
-print(fruits)</pre>
-        <p><strong>Tuples:</strong> Ordered and unchangeable. Use when data should not be modified.</p>
-        <pre>
-colors = ("red", "green", "blue")
-print(colors[0])</pre>
-        <p><strong>Sets:</strong> Unordered collections with unique elements. No duplicates allowed.</p>
-        <pre>
-numbers = {1, 2, 3, 2}
-numbers.add(4)
-print(numbers)</pre>
-        <p><strong>Dictionaries:</strong> Key-value pairs for storing data. Keys must be unique.</p>
-        <pre>
-student = {"name": "Alice", "age": 20}
-student["age"] = 21
-print(student["name"], student["age"])</pre>
+      <summary>Advanced Level <span class="time">⏱ 1+ hour per library</span></summary>
+      <div class="topics">
+        <div class="topic">
+          <div class="topic-title">NumPy</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Arrays and operations</li>
+              <li>Indexing and reshaping</li>
+              <li>Mathematical functions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Pandas</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Series and DataFrames</li>
+              <li>Data cleaning</li>
+              <li>Grouping and filtering</li>
+              <li>Analysis basics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Regex</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Pattern matching</li>
+              <li>Searching and replacing</li>
+              <li>Common expressions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">JSON</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Encoding data to JSON</li>
+              <li>Decoding JSON</li>
+              <li>Working with structured data</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">GUI / Pygame</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Introduction to GUI</li>
+              <li>Basics of Pygame</li>
+              <li>Creating simple games</li>
+            </ul>
+          </div>
+        </div>
+        <div class="topic">
+          <div class="topic-title">Decorators & Advanced Functions</div>
+          <div class="subtopics-list">
+            <ul>
+              <li>Function decorators</li>
+              <li>Wrapping and enhancing behavior</li>
+              <li>Advanced functional programming</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </details>
 
-    <details>
-        <summary>5. Functions</summary>
-        <p><strong>Defining Functions:</strong> Functions are defined using the <code>def</code> keyword and are used to
-            group reusable code.</p>
-        <pre>
-def greet():
-    print("Hello")
-
-greet()</pre>
-        <p><strong>Function with Parameters:</strong> You can pass information into functions using parameters.</p>
-        <pre>
-def greet(name):
-    print("Hello,", name)
-
-greet("Alice")</pre>
-        <p><strong>Default Parameters:</strong> Parameters can have default values.</p>
-        <pre>
-def greet(name="Guest"):
-    print("Hello,", name)
-
-greet()
-# Output: Hello, Guest</pre>
-        <p><strong>Return Statement:</strong> Functions can return values using <code>return</code>.</p>
-        <pre>
-def add(a, b):
-    return a + b
-
-result = add(3, 4)
-print(result)</pre>
-        <p><strong>Arbitrary Arguments:</strong> Use <code>*args</code> for variable number of positional arguments.</p>
-        <pre>
-def total(*numbers):
-    return sum(numbers)
-
-print(total(1, 2, 3))</pre>
-        <p><strong>Keyword Arguments:</strong> Use <code>**kwargs</code> to accept keyword arguments.</p>
-        <pre>
-def display(**info):
-    for key, value in info.items():
-        print(key, ":", value)
-
-display(name="Alice", age=25)</pre>
-        <p><strong>Recursion:</strong> A function calling itself.</p>
-        <pre>
-def factorial(n):
-    if n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
-
-print(factorial(5))</pre>
-        <p><strong>Lambda Functions:</strong> Anonymous functions written in a single line.</p>
-        <pre>
-square = lambda x: x * x
-print(square(5))</pre>
-        <p><strong>Function Annotations:</strong> Used for type hints.</p>
-        <pre>
-def add(x: int, y: int) -> int:
-    return x + y
-
-print(add(3, 4))</pre>
-    </details>
-
-    <details>
-        <summary>6. File Handling</summary>
-        <p><strong>Reading/Writing Files:</strong> Files are opened with open() and should be closed after use. Using
-            <code>with</code> handles closing automatically.
-        </p>
-        <pre>
-# Writing to a file
-with open("example.txt", "w") as f:
-    f.write("Hello\nWorld")
-
-# Reading the file
-with open("example.txt", "r") as f:
-    for line in f:
-        print(line.strip())</pre>
-        <p><strong>Appending to a file:</strong> Use mode "a" to add to the end.</p>
-        <pre>
-with open("example.txt", "a") as f:
-    f.write("\nNew line")</pre>
-        <p><strong>Checking file existence (with os):</strong></p>
-        <pre>
-import os
-if os.path.exists("example.txt"):
-    os.remove("example.txt")</pre>
-    </details>
-
-    <details>
-        <summary>7. Object-Oriented Programming (OOP)</summary>
-        <p><strong>Classes and Objects:</strong> A class is a blueprint; an object is an instance of that blueprint.</p>
-        <pre>
-class Person:
-    def __init__(self, name):
-        self.name = name
-
-    def greet(self):
-        return f"Hi, I'm {self.name}"
-
-p = Person("John")
-print(p.greet())</pre>
-        <p><strong>Inheritance:</strong> Allows new classes to inherit the properties of existing ones.</p>
-        <pre>
-class Student(Person):
-    def __init__(self, name, grade):
-        super().__init__(name)
-        self.grade = grade
-
-s = Student("Alice", "A")
-print(s.greet(), s.grade)</pre>
-        <p><strong>Encapsulation:</strong> Data hiding using private variables with <code>_</code> or <code>__</code>.
-        </p>
-        <pre>
-class BankAccount:
-    def __init__(self):
-        self.__balance = 0
-
-    def deposit(self, amount):
-        self.__balance += amount
-
-    def get_balance(self):
-        return self.__balance</pre>
-        <p><strong>Polymorphism:</strong> Same method name behaves differently based on context.</p>
-        <pre>
-class Dog:
-    def speak(self):
-        return "Woof"
-
-class Cat:
-    def speak(self):
-        return "Meow"
-
-def animal_sound(animal):
-    print(animal.speak())
-
-animal_sound(Dog())
-animal_sound(Cat())</pre>
-    </details>
-
-    <details>
-        <summary>11. Modules and Packages</summary>
-        <p><strong>Modules:</strong> A Python module is a file with a .py extension containing Python code (functions,
-            variables, classes).</p>
-        <pre>
-# Create a module file named mymodule.py
-def greet(name):
-    return f"Hello, {name}!"
-
-# Use the module in another file
-import mymodule
-print(mymodule.greet("Alice"))</pre>
-        <p><strong>Importing Specific Elements:</strong> You can import specific functions or variables.</p>
-        <pre>
-from mymodule import greet
-print(greet("Bob"))</pre>
-        <p><strong>Using Aliases:</strong> Use <code>as</code> to rename imports.</p>
-        <pre>
-import math as m
-print(m.sqrt(25))</pre>
-        <p><strong>Packages:</strong> A package is a collection of modules in a directory with an
-            <code>__init__.py</code> file.</p>
-        <pre>
-# Directory structure:
-# mypackage/
-# ├── __init__.py
-# ├── module1.py
-# └── module2.py
-
-from mypackage import module1
-module1.some_function()</pre>
-        <p><strong>Built-in Modules:</strong> Python comes with standard libraries like <code>math</code>,
-            <code>os</code>, <code>sys</code>, <code>random</code>.</p>
-        <pre>
-import random
-print(random.randint(1, 10))</pre>
-        <p><strong>Installing External Packages:</strong> Use pip to install third-party packages.</p>
-        <pre>
-pip install requests</pre>
-        <p><strong>Using Installed Package:</strong></p>
-        <pre>
-import requests
-response = requests.get("https://example.com")
-print(response.status_code)</pre>
-    </details>
-
-    <details>
-        <summary>9. Date and Time</summary>
-        <p><strong>datetime Module:</strong> Used to work with dates and times.</p>
-        <pre>
-import datetime
-now = datetime.datetime.now()
-print("Current Date and Time:", now)
-print("Year:", now.year)
-print("Month:", now.month)
-print("Day:", now.day)</pre>
-        <p><strong>Create Specific Date:</strong></p>
-        <pre>
-d = datetime.datetime(2025, 7, 7)
-print(d.strftime("%A, %d %B %Y"))</pre>
-        <p><strong>Time Delta:</strong> For date/time arithmetic.</p>
-        <pre>
-from datetime import timedelta
-tomorrow = now + timedelta(days=1)
-print("Tomorrow:", tomorrow)</pre>
-    </details>
-
-    <details>
-        <summary>10. Math, JSON, Regex</summary>
-        <p><strong>Math Module:</strong> Provides mathematical functions.</p>
-        <pre>
-import math
-print("Square root:", math.sqrt(16))
-print("Power:", math.pow(2, 3))
-print("Pi:", math.pi)</pre>
-        <p><strong>JSON Module:</strong> For encoding/decoding JSON data.</p>
-        <pre>
-import json
-# Convert dictionary to JSON string
-data = {"name": "Alice", "age": 25}
-json_str = json.dumps(data)
-print(json_str)
-
-# Convert JSON string to dictionary
-parsed = json.loads(json_str)
-print(parsed["name"])</pre>
-        <p><strong>Regular Expressions (Regex):</strong> For pattern matching and searching in strings.</p>
-        <pre>
-import re
-text = "My email is test@example.com"
-match = re.search(r"[\w.-]+@[\w.-]+", text)
-if match:
-    print("Found email:", match.group())
-
-# Find all matches
-text = "cat, mat, bat"
-matches = re.findall(r".at", text)
-print(matches)</pre>
-    </details>
-
-    <details>
-        <summary>11. Error and Exception Handling</summary>
-        <p><strong>try-except:</strong> Used to catch and handle exceptions.</p>
-        <pre>
-try:
-    print(10 / 0)
-except ZeroDivisionError:
-    print("Can't divide by zero")</pre>
-        <p><strong>Multiple exceptions:</strong> Handle different exceptions separately.</p>
-        <pre>
-try:
-    num = int("abc")
-except ValueError:
-    print("Invalid value")
-except Exception as e:
-    print("Error:", e)</pre>
-        <p><strong>finally block:</strong> Executes no matter what.</p>
-        <pre>
-try:
-    print("Trying...")
-finally:
-    print("Always runs")</pre>
-        <p><strong>Raising exceptions:</strong> You can manually throw an exception using <code>raise</code>.</p>
-        <pre>
-def set_age(age):
-    if age < 0:
-        raise ValueError("Age cannot be negative")
-    print("Age set to", age)</pre>
-    </details>
-
-    <details>
-        <summary>12. Advanced Topics</summary>
-        <p><strong>Decorators:</strong> Modify function behavior.</p>
-        <pre>
-def decorator(func):
-    def wrapper():
-        print("Before")
-        func()
-        print("After")
-    return wrapper
-
-@decorator
-def say_hello():
-    print("Hello")
-
-say_hello()</pre>
-    </details>
+  </div>
 
 </body>
 
