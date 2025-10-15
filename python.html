@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python Crash Course</title>
   <style>
     :root {
@@ -69,6 +70,8 @@
       justify-content: space-between;
       align-items: center;
       list-style: none;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     summary:hover {
@@ -128,13 +131,51 @@
       margin-bottom: 3px;
     }
 
-    @media (max-width: 600px) {
+    /* 📱 Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
       h1 {
         font-size: 2rem;
+        margin-bottom: 25px;
       }
 
       summary {
         font-size: 1.1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .time {
+        margin-top: 5px;
+      }
+
+      .topics {
+        grid-template-columns: 1fr;
+      }
+
+      .topic {
+        padding: 12px;
+      }
+
+      .topic-title {
+        font-size: 1rem;
+      }
+
+      .subtopics-list {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      summary {
+        font-size: 1rem;
       }
     }
   </style>
@@ -142,7 +183,7 @@
 
 <body>
 
-  <h1> Python Crash Course</h1>
+  <h1>Python Crash Course</h1>
 
   <div class="roadmap">
 
@@ -195,7 +236,7 @@
 
     <!-- BEGINNER -->
     <details>
-      <summary>Beginner Level <span class="time">⏱ 3-4 hours</span></summary>
+      <summary>Beginner Level <span class="time">⏱ 2–3 hours</span></summary>
       <div class="topics">
         <div class="topic">
           <div class="topic-title">Conditional Statements</div>
@@ -245,7 +286,7 @@
 
     <!-- INTERMEDIATE -->
     <details>
-      <summary>Intermediate Level <span class="time">⏱ 4-5 hours</span></summary>
+      <summary>Intermediate Level <span class="time">⏱ 3–4 hours</span></summary>
       <div class="topics">
         <div class="topic">
           <div class="topic-title">Functions</div>
